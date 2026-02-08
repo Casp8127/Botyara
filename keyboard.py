@@ -6,7 +6,7 @@ from aiogram.types import (
 )
 
 
-def get_main_keyboard() -> ReplyKeyboardMarkup:
+def get_main_keyboard() ->   ReplyKeyboardMarkup:
     """
     Главное меню с Reply-кнопками
     """

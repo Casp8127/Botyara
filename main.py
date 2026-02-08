@@ -5,8 +5,10 @@ import logging
 import text
 import keyboard
 
-from aiogram import Bot, Dispatcher, types
+from aiogram import Bot, Dispatcher, types, F
 from aiogram.filters.command import Command
+from aiogram.types import Message
+import asyncio
 
 
 # ВАЖНО! Вставьте сюда ваш токен, полученный от @BotFather
@@ -22,19 +24,17 @@ dp = Dispatcher()
 
 # Хэндлер на команду /start
 @dp.message(Command("start"))
-async def cmd_start(message: types.Message):
+async def cmd_start(message: Message):
+
     """
     Обработчик команды /start
     """
-    await message.answer(
-        text.start_phrase,
-        reply_markup=keyboard.get_main_keyboard()
-    )
-
+    await message.answer(text.start_phrase.format(name=message.from_user.full_name),
+                         reply_markup=keyboard.get_main_keyboard())
 
 # Хэндлер на остальные текстовые сообщения
 @dp.message()
-async def echo_handler(message: types.Message):
+async def echo_handler(message: Message):
     await message.answer(f"Я получил твое сообщение: {message.text}")
 
 # Запуск процесса поллинга новых апдейтов
