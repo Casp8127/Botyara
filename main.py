@@ -10,7 +10,7 @@ from aiogram.filters.command import Command
 
 
 # ВАЖНО! Вставьте сюда ваш токен, полученный от @BotFather
-BOT_TOKEN = "7426547076:AAGod5TnX59VeCZ8le1_CeVCPCH-XjGcC1U"
+BOT_TOKEN = ""
 
 # Включаем логирование, чтобы не пропустить важные сообщения
 logging.basicConfig(level=logging.INFO)
