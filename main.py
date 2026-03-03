@@ -16,12 +16,8 @@ from aiogram.types import Message
 import asyncio
 
 
-
-# ВАЖНО! Вставьте сюда ваш токен, полученный от @BotFather
-BOT_TOKEN = "7426547076:AAGod5TnX59VeCZ8le1_CeVCPCH-XjGcC1U"
+BOT_TOKEN = ""
 admin_chat = -1002182287942
-
-# Включаем логирование, чтобы не пропустить важные сообщения
 logging.basicConfig(level=logging.basicConfig
                         (format=u'%(filename)s[LINE:%(lineno)d]# %(levelname)-8s [%(asctime)s]  %(message)s',
                         level=logging.INFO))
@@ -47,8 +43,7 @@ async def cmd_start(message: Message):
 
 
 # Запуск процесса поллинга новых апдейтов
-async def main():
-    # Удаляем вебхук и пропускаем накопившиеся входящие сообщения
+async def main() 
     await bot.delete_webhook(drop_pending_updates=True)
     await dp.start_polling(bot)
 
